@@ -1,5 +1,13 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+
+This Project was created using Next.JS Framework and with languages TypeScript and TailwindCSS.
+-> Responsive UI
+-> Real time Filter (Frontend)
+-> Color Theme Same as PAKWHEELS
+-> Layout same as Auto Trader UK
+
+
 ## Getting Started
 
 First, run the development server:
