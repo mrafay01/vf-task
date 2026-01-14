@@ -3,7 +3,7 @@ import VehicleGrid from "./components/VehicleGrid"
 const Data = [
   {
     id: 1,
-    image: "/civic.png",
+    image: "/civic.webp",
     title: "Honda Civic 2021",
     make: "Honda",
     model: "Civic",
@@ -12,7 +12,7 @@ const Data = [
   },
    {
     id: 2,
-    image: "/vitz.png",
+    image: "/vitz.webp",
     title: "Toyota Vitz 2017",
     make: "Toyota",
     model: "Vitz",
@@ -21,7 +21,7 @@ const Data = [
   },
   {
     id: 3,
-    image: "/corolla.png",
+    image: "/corolla.webp",
     title: "Toyota Corolla 2019",
     make: "Toyota",
     model: "Corolla",
@@ -30,7 +30,7 @@ const Data = [
   },
   {
     id: 4,
-    image: "/fit.png",
+    image: "/fit.webp",
     title: "Honda Fit 2020",
     make: "Honda",
     model: "Fit",
@@ -39,7 +39,7 @@ const Data = [
   },
   {
     id: 5,
-    image: "/santro.png",
+    image: "/santro.webp",
     title: "Hyundai Santro 2010",
     make: "Hyundai",
     model: "Santro",
@@ -48,7 +48,7 @@ const Data = [
   },
   {
     id: 6,
-    image: "/cultus.png",
+    image: "/cultus.webp",
     title: "Suzuki Cultus 2021",
     make: "Suzuki",
     model: "Cultus",
@@ -57,7 +57,7 @@ const Data = [
   },
   {
     id: 7,
-    image: "/sonata.png",
+    image: "/sonata.webp",
     title: "Hyundai Sonata 2024",
     make: "Hyundai",
     model: "Sonata",
@@ -66,7 +66,7 @@ const Data = [
   },
   {
     id: 8,
-    image: "/elantra.png",
+    image: "/elantra.webp",
     title: "Hyundai Elantra 2025",
     make: "Hyundai",
     model: "Elantra",
@@ -78,7 +78,7 @@ const Data = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-surface">
-      {/* Header Section */}
+      {/* Header  */}
       <header className="bg-background border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center">
@@ -88,7 +88,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Main Content */}
+      {/* Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <VehicleGrid vehicles={Data} />
       </main>
