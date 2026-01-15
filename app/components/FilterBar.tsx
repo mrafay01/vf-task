@@ -1,30 +1,38 @@
 "use client"
 
-import { useSearchParams, useRouter } from "next/navigation"
+import React from "react"
 
-export default function FilterBar() {
-  const searchParams = useSearchParams()
-  const router = useRouter()
+interface Filters {
+  keyword: string
+  make: string
+  model: string
+  minPrice: string
+  maxPrice: string
+}
 
-  const keyword = searchParams.get("keyword") || ""
-  const make = searchParams.get("make") || ""
-  const model = searchParams.get("model") || ""
-  const minPrice = searchParams.get("minPrice") || ""
-  const maxPrice = searchParams.get("maxPrice") || ""
-
+export default function FilterBar({
+  filters,
+  onChange,
+}: {
+  filters: Filters
+  onChange: (filters: Filters) => void
+}) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
-    const params = new URLSearchParams(searchParams)
-    if (value) {
-      params.set(name, value)
-    } else {
-      params.delete(name)
-    }
-    router.replace(`?${params.toString()}`)
+    onChange({
+      ...filters,
+      [name]: value,
+    })
   }
 
   const handleReset = () => {
-    router.replace("/")
+    onChange({
+      keyword: "",
+      make: "",
+      model: "",
+      minPrice: "",
+      maxPrice: "",
+    })
   }
 
   return (
@@ -41,7 +49,7 @@ export default function FilterBar() {
           type="text"
           name="keyword"
           placeholder="Search keyword"
-          value={keyword}
+          value={filters.keyword}
           onChange={handleChange}
           className="px-4 py-2 rounded-lg border border-border bg-background text-foreground placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
         />
@@ -49,7 +57,7 @@ export default function FilterBar() {
           type="text"
           name="make"
           placeholder="Make (e.g, Honda)"
-          value={make}
+          value={filters.make}
           onChange={handleChange}
           className="px-4 py-2 rounded-lg border border-border bg-background text-foreground placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
         />
@@ -57,7 +65,7 @@ export default function FilterBar() {
           type="text"
           name="model"
           placeholder="Model (e.g, Civic)"
-          value={model}
+          value={filters.model}
           onChange={handleChange}
           className="px-4 py-2 rounded-lg border border-border bg-background text-foreground placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
         />
@@ -65,7 +73,7 @@ export default function FilterBar() {
           type="number"
           name="minPrice"
           placeholder="Min Price"
-          value={minPrice}
+          value={filters.minPrice}
           onChange={handleChange}
           className="px-4 py-2 rounded-lg border border-border bg-background text-foreground placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
         />
@@ -73,7 +81,7 @@ export default function FilterBar() {
           type="number"
           name="maxPrice"
           placeholder="Max Price"
-          value={maxPrice}
+          value={filters.maxPrice}
           onChange={handleChange}
           className="px-4 py-2 rounded-lg border border-border bg-background text-foreground placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
         />

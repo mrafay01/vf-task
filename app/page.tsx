@@ -1,5 +1,6 @@
 import VehicleGrid from "./components/VehicleGrid"
 
+
 const Data = [
   {
     id: 1,
@@ -25,7 +26,7 @@ const Data = [
     title: "Toyota Corolla 2019",
     make: "Toyota",
     model: "Corolla",
-    price: 2100000,
+    price: 3100000,
     year: 2019,
   },
   {
